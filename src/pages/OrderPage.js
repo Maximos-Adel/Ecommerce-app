@@ -89,7 +89,6 @@ const Order = () => {
               fontSize: "1rem",
               fontWeight: "600",
             }}
-            className="singleProduct"
           >
             Order Details
           </label>

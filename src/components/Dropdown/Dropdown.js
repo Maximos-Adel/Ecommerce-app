@@ -30,7 +30,7 @@ function Dropdown({ dropdown }) {
             );
           })}
           <li style={{ cursor: "pointer" }} onClick={handleAuthenticaton}>
-            SignOut
+            Sign-out
           </li>
         </ul>
       )}
