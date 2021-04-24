@@ -1,0 +1,45 @@
+@import "../../assets/styles/_mixins.scss";
+
+.store {
+  position: relative;
+  margin-top: 15px;
+  overflow: hidden;
+
+  @include atMdScreen {
+    margin-top: 0px;
+  }
+
+  &:hover &__image {
+    transform: scale(1.07);
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    // object-fit: cover;
+    transition: all 0.3s linear;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.3;
+  }
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 100%;
+    text-align: center;
+  }
+}

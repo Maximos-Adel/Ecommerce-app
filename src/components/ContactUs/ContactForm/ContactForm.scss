@@ -1,0 +1,59 @@
+@import "../../../assets/styles/_variables.scss";
+@import "../../../assets/styles/_mixins.scss";
+
+.contact-form {
+  background: #f6f7f9;
+  padding: 1rem;
+
+  &__title {
+    text-transform: capitalize;
+  }
+
+  &__text {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  &__input-field {
+    width: 100%;
+    display: inline-block;
+    padding: 0.8rem 0.5rem;
+    border: 1px solid #eee;
+    border-radius: 0.2rem;
+    outline: none;
+    &:nth-child(1) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__message {
+    width: 100%;
+    padding: 0.8rem 0.5rem;
+    margin: 0;
+    border: 1px solid #eee;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  &__sumbit-btn {
+    padding: 0.5rem 0.8rem;
+    text-transform: capitalize;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: inherit;
+    border: 1px solid #eee;
+    outline: none;
+    border-radius: 0.2rem;
+    font-size: 0.7rem;
+    cursor: pointer;
+    display: inline-block;
+    background: $main-white;
+
+    @include atMdScreen {
+      font-size: 1rem;
+    }
+
+    @include atLgScreen {
+      padding: 0.8rem 1rem;
+    }
+  }
+}
