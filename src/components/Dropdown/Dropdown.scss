@@ -11,18 +11,17 @@
   transition: all 0.2s linear;
 
   & li:hover {
-    background-color: rgba(212, 212, 212, 0.808);
-    cursor: pointer;
+    background-color: rgba(212, 212, 212, 0.945);
   }
 
   &__links {
     display: flex;
     align-items: center;
-    margin: 10px 25px 10px 12px;
+    margin: 10px 27px 10px 12px;
   }
-}
 
-svg {
-  display: flex;
-  margin-right: 10px;
+  &__icon {
+    display: flex;
+    margin-right: 10px;
+  }
 }

@@ -29,14 +29,18 @@ function Dropdown({ dropdown }) {
                   style={{ color: "black" }}
                   className="dropdown__links"
                 >
-                  {icon} {text}
+                  <icon className="dropdown__icon">{icon}</icon>
+                  <label>{text}</label>
                 </Link>
               </li>
             );
           })}
           <li onClick={handleAuthenticaton}>
             <div className="dropdown__links">
-              <GoSignOut /> Sign-out
+              <icon className="dropdown__icon">
+                <GoSignOut />
+              </icon>
+              <label>Sign-out</label>
             </div>
           </li>
         </ul>
