@@ -71,7 +71,7 @@ const Navbar = () => {
                 }}
               >
                 <li
-                  style={{ cursor: user ? "pointer" : "" }}
+                  style={{ cursor: user && "pointer", position: "relative" }}
                   onClick={() => setDropdown(!dropdown)}
                 >
                   <span className="site-header__link">
