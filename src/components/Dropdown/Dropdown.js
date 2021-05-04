@@ -21,26 +21,22 @@ function Dropdown({ dropdown }) {
       {dropdown && (
         <ul className="dropdown">
           {dropdownLinks.map((link) => {
-            const { id, icon, text, path } = link;
+            const { id, path, icon, text } = link;
             return (
               <li key={id}>
-                <Link
-                  to={path}
-                  style={{ color: "black" }}
-                  className="dropdown__links"
-                >
-                  <icon className="dropdown__icon">{icon}</icon>
-                  <label>{text}</label>
+                <Link to={path}>
+                  <div className="dropdown__links">
+                    {icon}
+                    {text}
+                  </div>
                 </Link>
               </li>
             );
           })}
           <li onClick={handleAuthenticaton}>
             <div className="dropdown__links">
-              <icon className="dropdown__icon">
-                <GoSignOut />
-              </icon>
-              <label>Sign-out</label>
+              <GoSignOut />
+              Sign-out
             </div>
           </li>
         </ul>

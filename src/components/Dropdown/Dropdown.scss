@@ -14,14 +14,19 @@
     background-color: rgba(212, 212, 212, 0.945);
   }
 
+  & li:hover &__links {
+    transform: translateX(3px);
+    transition: all 0.2s ease-in-out;
+  }
+
   &__links {
     display: flex;
     align-items: center;
     margin: 10px 27px 10px 12px;
-  }
+    color: black;
 
-  &__icon {
-    display: flex;
-    margin-right: 10px;
+    svg {
+      margin-right: 10px;
+    }
   }
 }
