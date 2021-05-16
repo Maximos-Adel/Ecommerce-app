@@ -15,6 +15,9 @@
 - react-icons
 - axios
 - bootstrap-grid
+- formik
+- yup
+- firebase
 
 ## Building and running on localhost
 
