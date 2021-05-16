@@ -1,17 +1,13 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { profileSchema } from "./../../utils/ValidationSchema";
-import { Formik } from "formik";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Formik } from 'formik';
+import { profileSchema } from '../../utils/ValidationSchema';
 
-const URL = "https://countriesnow.space/api/v0.1/countries";
+const URL = 'https://countriesnow.space/api/v0.1/countries';
 
 const Profile = () => {
   const [countries, setCountries] = useState([]);
-  const [cities, setCities] = useState("");
-  const { user } = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
+  const [cities, setCities] = useState('');
 
   useEffect(() => {
     async function fetchCountries() {
@@ -29,45 +25,37 @@ const Profile = () => {
   return (
     <Formik
       initialValues={{
-        firstName: "",
-        lastName: "",
-        email: "",
-        address: "",
-        country: "",
-        city: "",
-        mobile: "",
-        userName: "",
-        password: "",
-        confirmPassword: "",
+        firstName: '',
+        lastName: '',
+        email: '',
+        address: '',
+        country: '',
+        city: '',
+        mobile: '',
+        userName: '',
+        password: '',
+        confirmPassword: '',
       }}
       validationSchema={profileSchema}
-      onSubmit={({
-        firstName,
-        lastName,
-        email,
-        address,
-        country,
-        city,
-        mobile,
-        userName,
-        password,
-        confirmPassword,
-      }) => {
-        // dispatch({
-        //   type: "SET_USER",
-        //   user: firstName,
-        // });
-      }}
+      // onSubmit={({
+      //   firstName,
+      //   lastName,
+      //   email,
+      //   address,
+      //   country,
+      //   city,
+      //   mobile,
+      //   userName,
+      //   password,
+      //   confirmPassword,
+      // }) => {
+      // dispatch({
+      //   type: "SET_USER",
+      //   user: firstName,
+      // });
+      // }}
     >
-      {({
-        errors,
-        handleBlur,
-        handleChange,
-        handleSubmit,
-        isSubmitting,
-        touched,
-        values,
-      }) => (
+      {({ errors, handleBlur, handleChange, handleSubmit, values }) => (
         <form>
           <div className="form-group row">
             <label className="col-lg-3  ">First name</label>
@@ -84,7 +72,7 @@ const Profile = () => {
                 className=" offset-lg-3 col-lg-9 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.firstName}
@@ -105,7 +93,7 @@ const Profile = () => {
                 className=" offset-lg-3 col-lg-9 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.lastName}
@@ -126,7 +114,7 @@ const Profile = () => {
                 className=" offset-lg-3 col-lg-9 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.email}
@@ -147,7 +135,7 @@ const Profile = () => {
                 className=" offset-lg-3 col-lg-9 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.mobile}
@@ -169,7 +157,7 @@ const Profile = () => {
                 className=" offset-lg-3 col-lg-9 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.address}
@@ -209,7 +197,7 @@ const Profile = () => {
                 className=" offset-lg-3 col-lg-9 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.country}
@@ -230,7 +218,7 @@ const Profile = () => {
                 className=" offset-lg-3 col-lg-9 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.userName}
@@ -251,7 +239,7 @@ const Profile = () => {
                 className=" offset-lg-3 col-lg-9 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.password}
@@ -272,7 +260,7 @@ const Profile = () => {
                 className=" offset-lg-3 col-lg-9 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.confirmPassword}
@@ -283,7 +271,7 @@ const Profile = () => {
               type="submit"
               value="Save"
               className="offset-lg-10 col-lg-2 btn btn-primary my-3"
-              style={{ float: "right" }}
+              style={{ float: 'right' }}
               onClick={handleSubmit}
             />
           </div>

@@ -1,14 +1,14 @@
-import { SETUSER, CHECKOUT } from "./auth_types";
+import { SETUSER, CHECKOUT } from './auth_types';
 
 const initialState = {
   user: {},
-  firstName: "",
-  lastName: "",
-  email: "",
-  address: "",
-  country: "",
-  city: "",
-  mobile: "",
+  firstName: '',
+  lastName: '',
+  email: '',
+  address: '',
+  country: '',
+  city: '',
+  mobile: '',
 };
 
 const checkout = (state = initialState, action) => {

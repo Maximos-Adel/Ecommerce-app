@@ -1,6 +1,6 @@
-import { ImGoogle, ImFacebook, ImTwitter } from "react-icons/im";
+import { ImGoogle, ImFacebook, ImTwitter } from 'react-icons/im';
 
-import "./SocialIcons.scss";
+import './SocialIcons.scss';
 
 const SocialIcons = (props) => {
   const { onClickGoogle, onClickFacebook, onClickTwitter } = props;

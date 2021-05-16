@@ -1,4 +1,4 @@
-import { CHECKOUT } from "./auth_types";
+import { CHECKOUT } from './auth_types';
 
 export const checkout = (
   firstName,
@@ -8,15 +8,13 @@ export const checkout = (
   country,
   city,
   mobile
-) => {
-  return {
-    type: CHECKOUT,
-    firstName,
-    lastName,
-    email,
-    address,
-    country,
-    city,
-    mobile,
-  };
-};
+) => ({
+  type: CHECKOUT,
+  firstName,
+  lastName,
+  email,
+  address,
+  country,
+  city,
+  mobile,
+});

@@ -1,12 +1,12 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { auth } from "../../firebase";
-import { GoSignOut } from "react-icons/go";
-import "./Dropdown.scss";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { GoSignOut } from 'react-icons/go';
+import { auth } from '../../firebase';
+import './Dropdown.scss';
 
 // import dropdown links from utils
-import { dropdownLinks } from "../../utils/dropdownLinks";
+import { dropdownLinks } from '../../utils/dropdownLinks';
 
 function Dropdown({ dropdown }) {
   const { user } = useSelector((state) => state.auth);

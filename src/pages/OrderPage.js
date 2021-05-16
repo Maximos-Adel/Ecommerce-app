@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import Title from "../components/Title/Title";
-import { useSelector } from "react-redux";
-import { formatPrice } from "../utils/formatPrice";
-import ReviewData from "../components/ReviewData/ReviewData";
-import { Link } from "react-router-dom";
-import { IoIosCheckmarkCircle } from "react-icons/io";
-import Loading from "../components/Loading/Loading";
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { IoIosCheckmarkCircle } from 'react-icons/io';
+import Title from '../components/Title/Title';
+import { formatPrice } from '../utils/formatPrice';
+import ReviewData from '../components/ReviewData/ReviewData';
+import Loading from '../components/Loading/Loading';
 
 const Order = () => {
   const { cart } = useSelector((state) => state.products);
@@ -34,10 +34,10 @@ const Order = () => {
 
   const reviewDetailsFieldsList = [
     {
-      key: "email",
-      label: "Email:",
+      key: 'email',
+      label: 'Email:',
     },
-    { key: "mobile", label: "Mobile:" },
+    { key: 'mobile', label: 'Mobile:' },
   ];
 
   const [loading, setLoading] = useState(true);
@@ -68,11 +68,11 @@ const Order = () => {
     <div className="container mt-5">
       <Title title="your order" />
       <div className="row  mb-5 pb-5">
-        <div className="col-lg-6 m-auto " style={{ textAlign: "center" }}>
+        <div className="col-lg-6 m-auto " style={{ textAlign: 'center' }}>
           <IoIosCheckmarkCircle
-            style={{ fontSize: "100px", color: "#3BBC9A" }}
+            style={{ fontSize: '100px', color: '#3BBC9A' }}
           />
-          <h2 className="my-2" style={{ textTransform: "uppercase" }}>
+          <h2 className="my-2" style={{ textTransform: 'uppercase' }}>
             Thank you for your purchase!
           </h2>
           <p>Your order completed successfully</p>
@@ -86,17 +86,17 @@ const Order = () => {
         <div className="col-md-6 contact-form">
           <label
             style={{
-              fontSize: "1rem",
-              fontWeight: "600",
+              fontSize: '1rem',
+              fontWeight: '600',
             }}
           >
             Order Details
           </label>
           <hr className="mb-3 mt-2" />
           <div className="row">
-            {/* <ReviewData 
+            {/* <ReviewData
             {Object.keys(auth).map((key) => {
-              return  value={auth[key]} 
+              return  value={auth[key]}
             })}
             /> */}
 
@@ -127,41 +127,37 @@ const Order = () => {
 
           <div
             className="cart-sidebar__content my-3"
-            style={{ height: "250px" }}
+            style={{ height: '250px' }}
           >
             {cart.length > 0 &&
-              cart.map((item) => {
-                return (
-                  <div key={item.id} className="cart-sidebar__products">
-                    <div className="cart-sidebar__product-image-container">
-                      <img
-                        className="cart-sidebar__product-image"
-                        src={item.image}
-                        alt="product"
-                      />
-                    </div>
-                    <div className="cart-sidebar__product-info">
-                      <p className="cart-sidebar__product-name">{item.name}</p>
-                      <div className="cart-sidebar__prices">
-                        <p className="cart-sidebar__product-qty">
-                          {item.qty} X
-                        </p>
-                        <p className="cart-sidebar__product-price">
-                          {formatPrice(item.price)}
-                        </p>
-                      </div>
+              cart.map((item) => (
+                <div key={item.id} className="cart-sidebar__products">
+                  <div className="cart-sidebar__product-image-container">
+                    <img
+                      className="cart-sidebar__product-image"
+                      src={item.image}
+                      alt="product"
+                    />
+                  </div>
+                  <div className="cart-sidebar__product-info">
+                    <p className="cart-sidebar__product-name">{item.name}</p>
+                    <div className="cart-sidebar__prices">
+                      <p className="cart-sidebar__product-qty">{item.qty} X</p>
+                      <p className="cart-sidebar__product-price">
+                        {formatPrice(item.price)}
+                      </p>
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              ))}
           </div>
           <hr className="my-3" />
           <div className="mb-1">
-            <label style={{ fontSize: "1.3rem", fontWeight: "600" }}>
+            <label style={{ fontSize: '1.3rem', fontWeight: '600' }}>
               Total Amount:
             </label>
             <p
-              style={{ float: "right", fontSize: "1.3rem", fontWeight: "600" }}
+              style={{ float: 'right', fontSize: '1.3rem', fontWeight: '600' }}
             >
               {formatPrice(totalPrice)}
             </p>

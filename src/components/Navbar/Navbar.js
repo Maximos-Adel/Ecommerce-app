@@ -1,22 +1,22 @@
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { BiUser } from "react-icons/bi";
-import { CgShoppingBag } from "react-icons/cg";
-import { FaBars } from "react-icons/fa";
-import OutsideClickHandler from "react-outside-click-handler";
-import Dropdown from "../Dropdown/Dropdown";
-import Sidebar from "../Sidebar/Sidebar";
-import CartSidebar from "../CartSidebar/CartSidebar";
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { BiUser } from 'react-icons/bi';
+import { CgShoppingBag } from 'react-icons/cg';
+import { FaBars } from 'react-icons/fa';
+import OutsideClickHandler from 'react-outside-click-handler';
+import Dropdown from '../Dropdown/Dropdown';
+import Sidebar from '../Sidebar/Sidebar';
+import CartSidebar from '../CartSidebar/CartSidebar';
 
 // import navbar links from utils
-import { navbarLinks } from "../../utils/navbarLinks";
+import { navbarLinks } from '../../utils/navbarLinks';
 
 // import logo from assets
-import logo from "../../assets/images/hogash-logo-black.png";
+import logo from '../../assets/images/hogash-logo-black.png';
 
 // navbar styles
-import "./Navbar.scss";
+import './Navbar.scss';
 
 const Navbar = () => {
   const { cart } = useSelector((state) => state.products);
@@ -71,11 +71,11 @@ const Navbar = () => {
                 }}
               >
                 <li
-                  style={{ cursor: user && "pointer", position: "relative" }}
+                  style={{ cursor: user && 'pointer', position: 'relative' }}
                   onClick={() => setDropdown(!dropdown)}
                 >
                   <span className="site-header__link">
-                    Hello {!user ? "Guest" : user.displayName}
+                    Hello {!user ? 'Guest' : user.displayName}
                   </span>
 
                   {user && <Dropdown dropdown={dropdown} />}
@@ -83,7 +83,7 @@ const Navbar = () => {
               </OutsideClickHandler>
 
               <li className="site-header__icons-item">
-                <Link to="/login" style={{ color: "black" }}>
+                <Link to="/login" style={{ color: 'black' }}>
                   <BiUser className="site-header__icon" />
                 </Link>
               </li>
@@ -91,7 +91,7 @@ const Navbar = () => {
                 className="site-header__icons-item"
                 onClick={() => setSideCart(!sideCart)}
               >
-                <CgShoppingBag style={{ cursor: "pointer" }} />
+                <CgShoppingBag style={{ cursor: 'pointer' }} />
                 <span className="site-header__cart-count">{cartCount}</span>
                 <CartSidebar sideCart={sideCart} />
               </li>
@@ -100,7 +100,7 @@ const Navbar = () => {
                 onClick={() => setSideBar(!sideBar)}
               >
                 <FaBars className="site-header__toggle" />
-                {<Sidebar sideBar={sideBar} />}
+                <Sidebar sideBar={sideBar} />
               </li>
             </ul>
           </div>

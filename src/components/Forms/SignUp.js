@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { auth } from "../../firebase";
-import { HiOutlineMail } from "react-icons/hi";
-import { RiLockPasswordLine } from "react-icons/ri";
-import { BiUser } from "react-icons/bi";
-import Title from "../Title/Title";
-import { useHistory } from "react-router-dom";
+import React, { useState } from 'react';
+import { HiOutlineMail } from 'react-icons/hi';
+import { RiLockPasswordLine } from 'react-icons/ri';
+import { BiUser } from 'react-icons/bi';
+import { useHistory } from 'react-router-dom';
+import Title from '../Title/Title';
+import { auth } from '../../firebase';
 
 const SignUp = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const history = useHistory();
 
   const register = (e) => {
@@ -20,7 +20,7 @@ const SignUp = () => {
         // it successfully created a new user with email and password
         if (auth) {
           console.log(auth);
-          history.push("/");
+          history.push('/');
           return (
             // set name for user
             auth.user.updateProfile({
@@ -46,7 +46,7 @@ const SignUp = () => {
               placeholder="your username"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              style={{ outline: "none", border: "none" }}
+              style={{ outline: 'none', border: 'none' }}
             />
           </div>
           <span className="singleProduct__brand--span ">E-mail</span>
@@ -58,7 +58,7 @@ const SignUp = () => {
               placeholder="your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              style={{ outline: "none", border: "none" }}
+              style={{ outline: 'none', border: 'none' }}
             />
           </div>
           <span className="singleProduct__brand--span">Password</span>
@@ -70,19 +70,19 @@ const SignUp = () => {
               placeholder="your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              style={{ outline: "none", border: "none" }}
+              style={{ outline: 'none', border: 'none' }}
             />
           </div>
         </div>
         <button
           onClick={register}
           className="btn btn-secondary my-2 "
-          style={{ width: "100%" }}
+          style={{ width: '100%' }}
         >
           Sign-Up
         </button>
       </form>
-      <p style={{ textAlign: "justify", color: "#666" }}>
+      <p style={{ textAlign: 'justify', color: '#666' }}>
         By signing-up you agree to the Conditions of Use & Sale. Please see our
         Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
       </p>

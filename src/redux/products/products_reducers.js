@@ -5,7 +5,7 @@ import {
   FETCH_SINGLE_PRODUCT,
   REMOVE_SINGLE_FROM_CART,
   CLEAR_CART,
-} from "./products_types";
+} from './products_types';
 
 const initialState = {
   loading: true,
@@ -29,9 +29,7 @@ const productsReducer = (state = initialState, action) => {
         (product) => product.id === action.payload
       );
       // Check if Item is in cart already
-      const inCart = state.cart.find((item) =>
-        item.id === action.payload ? true : false
-      );
+      const inCart = state.cart.find((item) => item.id === action.payload);
 
       return {
         ...state,

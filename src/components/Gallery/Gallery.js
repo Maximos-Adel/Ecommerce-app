@@ -1,8 +1,8 @@
-import Slider from "react-slick";
+import Slider from 'react-slick';
 
-import "./Gallery.scss";
+import './Gallery.scss';
 
-const Gallery = ({ gallarey, id }) => {
+const Gallery = ({ gallarey }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -17,17 +17,11 @@ const Gallery = ({ gallarey, id }) => {
     <div>
       <Slider {...settings}>
         {gallarey &&
-          gallarey.map((image) => {
-            return (
-              <div className="gallery" key={image.sku}>
-                <img
-                  className="gallery__image"
-                  src={image.url}
-                  alt={image.sku}
-                />
-              </div>
-            );
-          })}
+          gallarey.map((image) => (
+            <div className="gallery" key={image.sku}>
+              <img className="gallery__image" src={image.url} alt={image.sku} />
+            </div>
+          ))}
       </Slider>
     </div>
   );

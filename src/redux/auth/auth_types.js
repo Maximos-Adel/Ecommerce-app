@@ -1,2 +1,2 @@
-export const CHECKOUT = "CHECKOUT";
-export const SETUSER = "SETUSER";
+export const CHECKOUT = 'CHECKOUT';
+export const SETUSER = 'SETUSER';

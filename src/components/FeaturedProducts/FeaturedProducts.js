@@ -28,16 +28,14 @@ const FeaturedProducts = ({ featuredProducts }) => {
         <div className="container">
           <Title title="OUR FEATURED" />
           <div className="row">
-            {featuredProducts.map((product) => {
-              return (
-                <div
-                  key={product.id}
-                  className="col-10 col-md-6 col-lg-4 mx-auto"
-                >
-                  <Product product={product} />
-                </div>
-              );
-            })}
+            {featuredProducts.map((product) => (
+              <div
+                key={product.id}
+                className="col-10 col-md-6 col-lg-4 mx-auto"
+              >
+                <Product product={product} />
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -1,10 +1,10 @@
-import Slider from "react-slick";
+import Slider from 'react-slick';
 
-import customer1 from "../../assets/images/reviewer-1.png";
+import customer1 from '../../assets/images/reviewer-1.png';
 
-import Title from "../Title/Title";
+import Title from '../Title/Title';
 
-import "./Reviews.scss";
+import './Reviews.scss';
 
 const Reviews = () => {
   const settings = {
@@ -16,7 +16,7 @@ const Reviews = () => {
     arrows: false,
     speed: 1000,
     autoplaySpeed: 2000,
-    cssEase: "linear",
+    cssEase: 'linear',
     responsive: [
       {
         breakpoint: 992,

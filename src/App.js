@@ -1,9 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 // pages
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
 import {
   Home,
   Shirts,
@@ -19,24 +20,21 @@ import {
   UserProfile,
   Checkout,
   Order,
-} from "./pages";
+} from './pages';
 
 // components
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
+import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 
 // scroll to top component
-import ScrollToTop from "./utils/ScrollToTop";
-
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
+import ScrollToTop from './utils/ScrollToTop';
 
 // Auth
-import { auth } from "./firebase";
+import { auth } from './firebase';
 
 const App = () => {
   const promise = loadStripe(
-    "pk_test_51I8Qc3CNnSQFkNa2e4JIe0XNojLB1g5Nl1sOTqRd4quwn9C70jPLrGfRj4XPPOwvDOqoMwaskkEdG5D0rk5EV3l300wwVVMoki"
+    'pk_test_51I8Qc3CNnSQFkNa2e4JIe0XNojLB1g5Nl1sOTqRd4quwn9C70jPLrGfRj4XPPOwvDOqoMwaskkEdG5D0rk5EV3l300wwVVMoki'
   );
   const dispatch = useDispatch();
 
@@ -46,13 +44,13 @@ const App = () => {
       if (authUser) {
         // the user just logged in / the user was logged in
         dispatch({
-          type: "SETUSER",
+          type: 'SETUSER',
           user: authUser,
         });
       } else {
         // the user is logged out
         dispatch({
-          type: "SETUSER",
+          type: 'SETUSER',
           user: null,
         });
       }
@@ -88,6 +86,7 @@ const App = () => {
         <Route exact path="/products">
           <AllProducts />
         </Route>
+
         <Route exact path="/products/:id" children={<SingleProduct />} />
         <Route exact path="/login">
           <Login />

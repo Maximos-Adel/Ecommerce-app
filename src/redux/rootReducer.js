@@ -1,12 +1,12 @@
-import { combineReducers } from "redux";
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { combineReducers } from 'redux';
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
-import productsReducer from "./products/products_reducers";
-import checkout from "./auth/auth_reducers";
+import productsReducer from './products/products_reducers';
+import checkout from './auth/auth_reducers';
 
 const persistConfig = {
-  key: "root",
+  key: 'root',
   storage,
 };
 

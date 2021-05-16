@@ -30,16 +30,14 @@ const HeadPhonesPage = () => {
         <div className="container">
           <Title title="SHIRTS PRODUCTS" />
           <div className="row">
-            {headProducts.map((product) => {
-              return (
-                <div
-                  key={product.id}
-                  className="col-10 col-md-6 col-lg-4 mx-auto"
-                >
-                  <Product product={product} />
-                </div>
-              );
-            })}
+            {headProducts.map((product) => (
+              <div
+                key={product.id}
+                className="col-10 col-md-6 col-lg-4 mx-auto"
+              >
+                <Product product={product} />
+              </div>
+            ))}
           </div>
         </div>
       </section>

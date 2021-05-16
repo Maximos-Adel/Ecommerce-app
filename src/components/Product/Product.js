@@ -1,13 +1,13 @@
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { AiOutlineShopping } from "react-icons/ai";
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { AiOutlineShopping } from 'react-icons/ai';
 
-import { formatPrice } from "../../utils/formatPrice";
-import Stars from "../Stars/Stars";
+import { formatPrice } from '../../utils/formatPrice';
+import Stars from '../Stars/Stars';
 
-import { addToCart } from "../../redux/products/products_actions";
+import { addToCart } from '../../redux/products/products_actions';
 
-import "./Product.scss";
+import './Product.scss';
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();

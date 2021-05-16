@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { auth } from "../../firebase";
-import { HiOutlineMail } from "react-icons/hi";
-import { RiLockPasswordLine } from "react-icons/ri";
-import SocialIcons from "../SocialIcons/SocialIcons";
-import Title from "../Title/Title";
-import firebase from "firebase";
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { HiOutlineMail } from 'react-icons/hi';
+import { RiLockPasswordLine } from 'react-icons/ri';
+import firebase from 'firebase';
+import { auth } from '../../firebase';
+import SocialIcons from '../SocialIcons/SocialIcons';
+import Title from '../Title/Title';
 
 const SignIn = () => {
   const history = useHistory();
-  const [loginemail, setLoginEmail] = useState("");
-  const [loginpassword, setLoginPassword] = useState("");
+  const [loginemail, setLoginEmail] = useState('');
+  const [loginpassword, setLoginPassword] = useState('');
 
   const signIn = (e) => {
     e.preventDefault();
     auth
       .signInWithEmailAndPassword(loginemail, loginpassword)
-      .then((auth) => {
-        history.push("/");
+      .then(() => {
+        history.push('/');
       })
       .catch((error) => alert(error.message));
   };
@@ -27,7 +27,7 @@ const SignIn = () => {
     auth
       .signInWithPopup(googleProvider)
       .then((res) => {
-        history.push("/");
+        history.push('/');
         console.log(res.user);
       })
       .catch((error) => {
@@ -40,7 +40,7 @@ const SignIn = () => {
     auth
       .signInWithPopup(facebookProvider)
       .then((res) => {
-        history.push("/");
+        history.push('/');
         console.log(res.user);
       })
       .catch((error) => {
@@ -68,8 +68,8 @@ const SignIn = () => {
               value={loginemail}
               onChange={(e) => setLoginEmail(e.target.value)}
               style={{
-                outline: "none",
-                border: "none",
+                outline: 'none',
+                border: 'none',
               }}
             />
           </div>
@@ -82,7 +82,7 @@ const SignIn = () => {
               placeholder="your password"
               value={loginpassword}
               onChange={(e) => setLoginPassword(e.target.value)}
-              style={{ outline: "none", border: "none" }}
+              style={{ outline: 'none', border: 'none' }}
             />
           </div>
         </div>
@@ -90,12 +90,12 @@ const SignIn = () => {
           type="submit"
           onClick={signIn}
           className="btn btn-primary my-2"
-          style={{ width: "100%" }}
+          style={{ width: '100%' }}
         >
           Sign-In
         </button>
       </form>
-      <p style={{ textAlign: "justify", color: "#666" }}>
+      <p style={{ textAlign: 'justify', color: '#666' }}>
         By signing-in you agree to the Conditions of Use & Sale. Please see our
         Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
       </p>

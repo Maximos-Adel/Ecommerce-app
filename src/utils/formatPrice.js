@@ -1,5 +1,5 @@
 const formatPrice = (price) => {
-  let formatedPrice = new Intl.NumberFormat('en-US', {
+  const formatedPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
   }).format((price / 100).toFixed(2));

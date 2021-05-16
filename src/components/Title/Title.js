@@ -1,13 +1,11 @@
-import "./Title.scss";
+import './Title.scss';
 
-const Title = ({ title }) => {
-  return (
-    <div className="title pb-5">
-      <div className="title__line"></div>
-      <h3 className="title__heading">{title}</h3>
-      <div className="title__line"></div>
-    </div>
-  );
-};
+const Title = ({ title }) => (
+  <div className="title pb-5">
+    <div className="title__line" />
+    <h3 className="title__heading">{title}</h3>
+    <div className="title__line" />
+  </div>
+);
 
 export default Title;

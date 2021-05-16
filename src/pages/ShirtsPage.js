@@ -28,16 +28,14 @@ const ShirtsPage = () => {
         <div className="container">
           <Title title="SHIRTS PRODUCTS" />
           <div className="row">
-            {shirtProducts.map((product) => {
-              return (
-                <div
-                  key={product.id}
-                  className="col-10 col-md-6 col-lg-4 mx-auto"
-                >
-                  <Product product={product} />
-                </div>
-              );
-            })}
+            {shirtProducts.map((product) => (
+              <div
+                key={product.id}
+                className="col-10 col-md-6 col-lg-4 mx-auto"
+              >
+                <Product product={product} />
+              </div>
+            ))}
           </div>
         </div>
       </section>

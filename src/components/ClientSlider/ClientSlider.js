@@ -1,15 +1,15 @@
-import Slider from "react-slick";
+import Slider from 'react-slick';
 
-import Title from "../Title/Title";
+import Title from '../Title/Title';
 
-import clientImg1 from "../../assets/images/client/1.png";
-import clientImg2 from "../../assets/images/client/2.png";
-import clientImg3 from "../../assets/images/client/3.png";
-import clientImg4 from "../../assets/images/client/4.png";
-import clientImg5 from "../../assets/images/client/5.png";
-import clientImg6 from "../../assets/images/client/6.png";
+import clientImg1 from '../../assets/images/client/1.png';
+import clientImg2 from '../../assets/images/client/2.png';
+import clientImg3 from '../../assets/images/client/3.png';
+import clientImg4 from '../../assets/images/client/4.png';
+import clientImg5 from '../../assets/images/client/5.png';
+import clientImg6 from '../../assets/images/client/6.png';
 
-import "./ClientSlider.scss";
+import './ClientSlider.scss';
 
 const ClientSlider = () => {
   const settings = {
@@ -21,7 +21,7 @@ const ClientSlider = () => {
     arrows: false,
     speed: 1000,
     autoplaySpeed: 2000,
-    cssEase: "linear",
+    cssEase: 'linear',
     responsive: [
       {
         breakpoint: 1024,

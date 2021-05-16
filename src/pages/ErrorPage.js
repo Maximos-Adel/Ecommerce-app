@@ -1,9 +1,7 @@
-const ErrorPage = () => {
-  return (
-    <div>
-      <h1>ErrorPage</h1>
-    </div>
-  );
-};
+const ErrorPage = () => (
+  <div>
+    <h1>ErrorPage</h1>
+  </div>
+);
 
 export default ErrorPage;

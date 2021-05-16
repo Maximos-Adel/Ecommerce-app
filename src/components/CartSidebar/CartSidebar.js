@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { CgCloseO } from "react-icons/cg";
+import { CgCloseO } from 'react-icons/cg';
 
-import { formatPrice } from "../../utils/formatPrice";
+import { formatPrice } from '../../utils/formatPrice';
 
-import cartEmptyImg from "../../assets/images/cart-empty.jpg";
+import cartEmptyImg from '../../assets/images/cart-empty.jpg';
 
-import "./CartSidebar.scss";
+import './CartSidebar.scss';
 
 const CartSidebar = ({ sideCart }) => {
   const { cart } = useSelector((state) => state.products);
@@ -27,11 +27,11 @@ const CartSidebar = ({ sideCart }) => {
 
   return (
     <div
-      className={sideCart ? "cart-overlay cart-overlay--show" : "cart-overlay"}
+      className={sideCart ? 'cart-overlay cart-overlay--show' : 'cart-overlay'}
     >
       <div
         className={
-          sideCart ? "cart-sidebar cart-sidebar--show" : "cart-sidebar"
+          sideCart ? 'cart-sidebar cart-sidebar--show' : 'cart-sidebar'
         }
       >
         <div className="cart-sidebar__heading">
@@ -42,28 +42,26 @@ const CartSidebar = ({ sideCart }) => {
         </div>
         <div className="cart-sidebar__content">
           {cart.length > 0 ? (
-            cart.map((item) => {
-              return (
-                <div key={item.id} className="cart-sidebar__products">
-                  <div className="cart-sidebar__product-image-container">
-                    <img
-                      className="cart-sidebar__product-image"
-                      src={item.image}
-                      alt="product"
-                    />
-                  </div>
-                  <div className="cart-sidebar__product-info">
-                    <p className="cart-sidebar__product-name">{item.name}</p>
-                    <div className="cart-sidebar__prices">
-                      <p className="cart-sidebar__product-qty">{item.qty} X</p>
-                      <p className="cart-sidebar__product-price">
-                        {formatPrice(item.price)}
-                      </p>
-                    </div>
+            cart.map((item) => (
+              <div key={item.id} className="cart-sidebar__products">
+                <div className="cart-sidebar__product-image-container">
+                  <img
+                    className="cart-sidebar__product-image"
+                    src={item.image}
+                    alt="product"
+                  />
+                </div>
+                <div className="cart-sidebar__product-info">
+                  <p className="cart-sidebar__product-name">{item.name}</p>
+                  <div className="cart-sidebar__prices">
+                    <p className="cart-sidebar__product-qty">{item.qty} X</p>
+                    <p className="cart-sidebar__product-price">
+                      {formatPrice(item.price)}
+                    </p>
                   </div>
                 </div>
-              );
-            })
+              </div>
+            ))
           ) : (
             <div className="cart-sidebar__empty-image-container">
               <img
@@ -82,7 +80,7 @@ const CartSidebar = ({ sideCart }) => {
             Your Cart
           </Link>
           <Link
-            to={user ? "/checkout" : "/login"}
+            to={user ? '/checkout' : '/login'}
             className="btn btn-secondary ml-2"
           >
             Checkout

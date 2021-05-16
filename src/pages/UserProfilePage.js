@@ -1,7 +1,7 @@
-import React from "react";
-import { AiFillCamera } from "react-icons/ai";
-import avatar from "../assets/images/avatar.jpg";
-import ProfileForm from "../components/Forms/Profile";
+import React from 'react';
+import { AiFillCamera } from 'react-icons/ai';
+import avatar from '../assets/images/avatar.jpg';
+import ProfileForm from '../components/Forms/Profile';
 
 function UserProfile() {
   return (
@@ -12,35 +12,35 @@ function UserProfile() {
             <div className="col-lg-3 mt-4 mt-lg-0">
               <div className="d-flex justify-content-center mb-4">
                 <div className="profile-image-outer-container">
-                  <div class="profile-image-inner-container bg-color-primary">
+                  <div className="profile-image-inner-container bg-color-primary">
                     <img
                       src={avatar}
                       alt=""
                       style={{
-                        height: "200px",
-                        width: "200px",
-                        borderRadius: "50%",
-                        border: "5px solid white",
+                        height: '200px',
+                        width: '200px',
+                        borderRadius: '50%',
+                        border: '5px solid white',
                       }}
                     />
                     <span
                       className="d-flex align-items-center justify-content-center"
-                      for="file"
+                      htmlFor="file"
                       style={{
-                        position: "absolute",
-                        top: "150px",
-                        left: "180px",
-                        height: "40px",
-                        width: "40px",
-                        borderRadius: "50%",
-                        backgroundColor: "black",
+                        position: 'absolute',
+                        top: '150px',
+                        left: '180px',
+                        height: '40px',
+                        width: '40px',
+                        borderRadius: '50%',
+                        backgroundColor: 'black',
                       }}
                     >
                       <AiFillCamera
                         style={{
-                          color: "white",
-                          height: "20px",
-                          width: "20px",
+                          color: 'white',
+                          height: '20px',
+                          width: '20px',
                         }}
                       />
                     </span>

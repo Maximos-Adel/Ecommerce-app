@@ -28,16 +28,14 @@ const ShoesPage = () => {
         <div className="container">
           <Title title="SHOES PRODUCTS" />
           <div className="row">
-            {shoesProducts.map((product) => {
-              return (
-                <div
-                  key={product.id}
-                  className="col-10 col-md-6 col-lg-4 mx-auto"
-                >
-                  <Product product={product} />
-                </div>
-              );
-            })}
+            {shoesProducts.map((product) => (
+              <div
+                key={product.id}
+                className="col-10 col-md-6 col-lg-4 mx-auto"
+              >
+                <Product product={product} />
+              </div>
+            ))}
           </div>
         </div>
       </section>

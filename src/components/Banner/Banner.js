@@ -1,14 +1,12 @@
 import './Banner.scss';
 
-const Banner = ({ image }) => {
-  return (
-    <div
-      style={{
-        backgroundImage: `url(${image})`,
-      }}
-      className="product-banner"
-    ></div>
-  );
-};
+const Banner = ({ image }) => (
+  <div
+    style={{
+      backgroundImage: `url(${image})`,
+    }}
+    className="product-banner"
+  />
+);
 
 export default Banner;

@@ -1,11 +1,11 @@
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 
-import Gallery from "../Gallery/Gallery";
-import SingleProductInfo from "./SingleProductInfo/SingleProductInfo";
-import Title from "../Title/Title";
-import Hero from "../Hero/Hero";
-import ClientSlider from "../ClientSlider/ClientSlider";
-import Loading from "../Loading/Loading";
+import Gallery from '../Gallery/Gallery';
+import SingleProductInfo from './SingleProductInfo/SingleProductInfo';
+import Title from '../Title/Title';
+import Hero from '../Hero/Hero';
+import ClientSlider from '../ClientSlider/ClientSlider';
+import Loading from '../Loading/Loading';
 
 const SingleProduct = ({ singleProduct }) => {
   const { loading } = useSelector((state) => state.products);
@@ -25,16 +25,8 @@ const SingleProduct = ({ singleProduct }) => {
     );
   }
 
-  const {
-    image,
-    gallarey,
-    id,
-    name,
-    brand,
-    price,
-    stars,
-    desription,
-  } = singleProduct;
+  const { image, gallarey, id, name, brand, price, stars, desription } =
+    singleProduct;
 
   return (
     <>

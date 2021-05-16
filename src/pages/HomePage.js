@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
 import { fetchProducts } from '../redux/products/products_actions';
-
 import MainBanner from '../components/MainBanner/MainBanner';
 import Categories from '../components/Categories/Categories';
 import BestProducts from '../components/BestProducts/BestProducts';

@@ -1,20 +1,19 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
-import { CardElement } from "@stripe/react-stripe-js";
-import axios from "axios";
-import { Formik } from "formik";
-import { Link } from "react-router-dom";
-import { checkout } from "../../redux/auth/auth_actions";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { checkoutSchema } from "./../../utils/ValidationSchema";
+import React, { useEffect, useState } from 'react';
+import { CardElement } from '@stripe/react-stripe-js';
+import axios from 'axios';
+import { Formik } from 'formik';
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { checkout } from '../../redux/auth/auth_actions';
 
-const URL = "https://countriesnow.space/api/v0.1/countries";
+import { checkoutSchema } from '../../utils/ValidationSchema';
+
+const URL = 'https://countriesnow.space/api/v0.1/countries';
 
 const Checkout = () => {
   const history = useHistory();
   const [countries, setCountries] = useState([]);
-  const [cities, setCities] = useState("");
+  const [cities, setCities] = useState('');
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,13 +32,13 @@ const Checkout = () => {
   return (
     <Formik
       initialValues={{
-        firstName: "",
-        lastName: "",
-        email: "",
-        address: "",
-        country: "",
-        city: "",
-        mobile: "",
+        firstName: '',
+        lastName: '',
+        email: '',
+        address: '',
+        country: '',
+        city: '',
+        mobile: '',
       }}
       validationSchema={checkoutSchema}
       onSubmit={({
@@ -54,20 +53,12 @@ const Checkout = () => {
         dispatch(
           checkout(firstName, lastName, email, address, country, city, mobile)
         );
-        history.push("/order");
+        history.push('/order');
       }}
     >
-      {({
-        errors,
-        handleBlur,
-        handleChange,
-        handleSubmit,
-        isSubmitting,
-        touched,
-        values,
-      }) => (
+      {({ errors, handleBlur, handleChange, handleSubmit, values }) => (
         <form>
-          <div className="form-group row" style={{ marginRight: "0" }}>
+          <div className="form-group row" style={{ marginRight: '0' }}>
             <label className="col-lg-3">First name</label>
             <input
               className="col-lg-9 contact-form__input-field"
@@ -82,7 +73,7 @@ const Checkout = () => {
                 className=" offset-lg-3 col-lg-9 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.firstName}
@@ -103,7 +94,7 @@ const Checkout = () => {
                 className=" offset-lg-3 col-lg-9 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.lastName}
@@ -124,7 +115,7 @@ const Checkout = () => {
                 className=" offset-lg-3 col-lg-9 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.email}
@@ -144,7 +135,7 @@ const Checkout = () => {
                 className=" offset-lg-3 col-lg-9 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.mobile}
@@ -166,7 +157,7 @@ const Checkout = () => {
                 className=" offset-lg-3 col-lg-9 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.address}
@@ -206,7 +197,7 @@ const Checkout = () => {
                 className=" offset-lg-3 col-lg-4 p-0"
                 style={{
                   fontSize: 12,
-                  color: "red",
+                  color: 'red',
                 }}
               >
                 {errors.country}
@@ -215,7 +206,7 @@ const Checkout = () => {
 
             <p
               className="col-lg-12 mt-4"
-              style={{ fontSize: "1rem", fontWeight: "600" }}
+              style={{ fontSize: '1rem', fontWeight: '600' }}
             >
               Payment Method
             </p>
@@ -224,7 +215,7 @@ const Checkout = () => {
           <Link
             to="/order"
             className="col-lg-12 btn btn-secondary"
-            style={{ textAlign: "center" }}
+            style={{ textAlign: 'center' }}
             onClick={handleSubmit}
           >
             Order Now
